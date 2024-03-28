@@ -1,0 +1,85 @@
+<ion-content [fullscreen]="true">
+  <div class="fondo">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button routerLink="/login">
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-title class="custom-title">Registro</ion-title>
+      </ion-toolbar>
+      <br>
+      <div class="formulario">
+        <form class="custom-form" (ngSubmit)="on()" [formGroup]="registroForm">
+          <ion-item class="custom-item" [class.invalid]="registroForm.get('nombre')?.invalid && registroForm.get('nombre')?.touched">
+            <ion-label class="custom-label" position="floating">Nombre(s):</ion-label>
+            <ion-input type="text" formControlName="nombre" id="nameInput" aria-required="true" class="custom-input" aria-labelledby="nameLabel"></ion-input>
+            <ion-note class="custom-note" *ngIf="registroForm.get('nombre')?.invalid && registroForm.get('nombre')?.touched">
+              El nombre es obligatorio.
+            </ion-note>
+          </ion-item>
+        
+          <ion-item class="custom-item" [class.invalid]="registroForm.get('apellido')?.invalid && registroForm.get('apellido')?.touched">
+            <ion-label position="floating" id="apellidoLabel">Apellido(s):</ion-label>
+            <ion-input type="text" formControlName="apellido" id="apellidoInput" aria-required="true" class="custom-input"
+              aria-labelledby="apellidoLabel"></ion-input>
+            <ion-note *ngIf="registroForm.get('apellido')?.invalid && registroForm.get('apellido')?.touched">
+              El apellido es obligatorio.
+            </ion-note>
+          </ion-item>
+        
+          <ion-item class="custom-item">
+            <ion-label class="custom-label" position="stacked">Selecciona tu localidad</ion-label>
+            <ion-select formControlName="rutaSeleccionada" aria-required="true">
+              <ion-select-option *ngFor="let ruta of rutas" [value]="ruta">{{ ruta }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        
+          <ion-item class="custom-item">
+            <ion-label position="floating" id="direccionLabel">Dirección</ion-label>
+            <ion-input type="text" formControlName="direccion" id="direccionInput" aria-required="true" class="custom-input" aria-labelledby="direccionLabel"></ion-input>
+            <ion-note *ngIf="registroForm.get('direccion')?.invalid && registroForm.get('direccion')?.touched">
+              Ingresa una direccion valida.
+            </ion-note>
+          </ion-item>
+          <ion-item class="custom-item">
+            <ion-label position="floating" id="telefonoLabel">Teléfono:</ion-label>
+            <ion-input type="number" formControlName="telefono" id="telefonoInput" aria-required="true" class="custom-input" aria-labelledby="telefonoLabel"></ion-input>
+            <ion-note *ngIf="registroForm.get('telefono')?.invalid && registroForm.get('telefono')?.touched">
+              Ingresa un telefono valido.
+            </ion-note>
+          </ion-item>
+      
+          <ion-item class="custom-item" [class.invalid]="registroForm.get('correo')?.invalid && registroForm.get('correo')?.touched">
+            <ion-label position="floating" id="correoLabel">Correo:</ion-label>
+            <ion-input type="email" formControlName="correo" id="correoInput" aria-required="true" class="custom-input"
+              aria-labelledby="correoLabel"></ion-input>
+            <ion-note *ngIf="registroForm.get('correo')?.invalid && registroForm.get('correo')?.touched">
+              Ingresa un correo electrónico válido.
+            </ion-note>
+          </ion-item>
+        
+          <ion-item class="custom-item" [class.invalid]="registroForm.get('password')?.invalid && registroForm.get('password')?.touched">
+            <ion-label position="floating" id="passwordLabel">Contraseña:</ion-label>
+            <ion-input type="password" formControlName="password" id="passwordInput" aria-required="true" class="custom-input"
+              aria-labelledby="passwordLabel"></ion-input>
+            <ion-note *ngIf="registroForm.get('password')?.invalid && registroForm.get('password')?.touched">
+              La contraseña es obligatoria.
+            </ion-note>
+          </ion-item>
+        
+          <ion-item class="custom-item" [class.invalid]="registroForm.get('p_verifi')?.invalid && registroForm.get('p_verifi')?.touched">
+            <ion-label position="floating" id="verificarPasswordLabel">Verifica tu contraseña</ion-label>
+            <ion-input type="password" formControlName="p_verifi" id="p-verifiInput" aria-required="true" class="custom-input"
+              aria-labelledby="verificarPasswordLabel"></ion-input>
+            <ion-note *ngIf="registroForm.get('p_verifi')?.invalid && registroForm.get('p_verifi')?.touched">
+              Las contraseñas no coinciden.
+            </ion-note>
+          </ion-item>
+        
+          <button type="submit" expand="full" shape="round" color="primary" class="custom-button">Registrarse</button>
+        </form>  
+
+      </div>
+  </div>
+</ion-content>

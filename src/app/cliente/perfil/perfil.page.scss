@@ -1,0 +1,130 @@
+  .center-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header-image {
+    width: 120px; 
+    height: 120px;
+    border-radius: 50%; 
+    object-fit: cover; 
+  }
+  
+  .custom-item-group p {
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 12px; 
+    background-color: #ebebeb;
+    border-radius: 25px;
+    width: 250px;
+  }
+  .custom-item-group strong {
+    font-weight: bold;
+    color: #2a313d;
+  }
+  .custom-info span {
+    color: #6b6b6b;
+  }
+  .custom-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .custom-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+  }
+  
+  .center-image {
+  text-align: center;
+  }
+  
+  .header-image {
+  max-width: 100px; 
+  max-height: 100px;
+  }
+  
+  .custom-info-container {
+  text-align: center;
+  }
+  .custom-info {
+  margin-bottom: 10px;
+  }
+
+  ///////
+  .navigation{
+    position: relative;
+    width: 400px;
+    height: 70px;
+    background: #EAEDED;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; 
+    bottom: 0
+}
+.navigation ul{
+    display: flex;
+    width: 370px;
+}
+.navigation ul li{
+    list-style: none;
+    position: relative;
+    /* 350 / 4 = 70*/
+    width: 87.5px;
+    height: 70px;
+    z-index: 2;
+}
+.navigation ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    line-height: 70px;
+    font-size: 1.5rem;
+    transition: 0.5s;
+    color: #222327;
+}
+.navigation ul li.active a .icon{
+    transform: translateY(-22px);
+    color: #12CD26;
+}
+.navigation ul li a .text {
+position: absolute;
+background: linear-gradient(to right, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5, #1a73e8, #6f96ff);
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+padding: 2px 7px;
+border-radius: 12px;
+font-weight: 400;
+font-size: 0.75em;
+letter-spacing: 0.05em;
+transition: 0.5s;
+opacity: 0;
+transform: translateY(15px);
+text-shadow: 0 0 8px rgba(0,0,0,0.3); /* Agrega sombra al texto para crear el fondo gris */
+}
+.navigation ul li.active a .text{
+    transform: translateY(-4px);
+    opacity:1;
+}
+
+  

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Verificación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <br>
+  <br>
+  <div class="formulario">
+    <form >
+      <ion-item>
+        <ion-label position="stacked">Código de verificación de 6 dígitos</ion-label>
+        <ion-input type="number" name="codigo" id="codigo" [(ngModel)]="codigo"></ion-input>
+      </ion-item>
+      <br>
+      <br>
+      <ion-button expand="block" type="submit" (click)="ver()">Verificar</ion-button>
+    </form>
+  </div>
+ 
+</ion-content>

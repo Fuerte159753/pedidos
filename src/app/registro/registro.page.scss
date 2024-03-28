@@ -1,0 +1,51 @@
+.fondo{
+  height: 100%;
+  background-color: #fff;
+ /*  background-image: url('./../../assets/img/fondo.avif');
+  background-repeat: no-repeat; 
+  background-size: cover;  Ajusta la imagen para cubrir todo el contenedor */
+  /*background-image: linear-gradient(to bottom, 
+  #005500 0%,
+  #008000 20%,
+  #00b300 40%,
+  #00ff00 60%,
+  #99ccff 80%,
+  #3366ff 100%); Azul */
+}
+.custom-title {
+  color: #0f0d0d; // Cambia el color del texto según tu diseño
+  padding-left: 35%;
+}
+
+.custom-form {
+  width: 100%; // Ajusta el ancho máximo según tus preferencias
+}
+
+.custom-item {
+  margin-bottom: 16px; // Ajusta el espaciado entre elementos según tus preferencias
+}
+.custom-button {
+  color: white;
+  padding: 10px 20px;
+  margin: 10px auto; // Centrar vertical y horizontalmente
+  display: block; // Asegurar que el botón ocupe todo el ancho disponible
+  border-radius: 20px;
+  background-image: linear-gradient(to right, #03d203,#2f972f, #03d203);
+}
+.formulario {
+  margin-left: 4%; /* Ajusta el margen izquierdo según sea necesario */
+}
+.custom-item{
+  width: 94%;
+  border-radius: 20px;
+}
+.custom-label{
+  //background-color: transparent;
+}
+.custom-input{
+  //background-color: transparent;
+}
+.custom-note{
+  //background-color: transparent;
+  color: red;
+}

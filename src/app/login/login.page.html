@@ -1,0 +1,38 @@
+  <ion-content [fullscreen]="true">
+    <div class="login-container">
+      <div class="login-title">
+        <h1>Mandaditos Xhate</h1>
+      </div>
+
+      <div class="login-image-container">
+        <img class="login-image" src="assets/img/logo.png" alt="Imagen de la pantalla de inicio de sesión">
+      </div>
+    
+      <div class="login-form-container">
+        <form (ngSubmit)="login()" class="login-form">
+          <h2>Inicia sesión</h2>
+          <div class="login-fields">
+            <div class="input-group">
+              <span class="input-group-text" id="basic-addon1">
+                <ion-icon name="mail-outline"></ion-icon>
+              </span>
+              <ion-input [(ngModel)]="email" name="email" aria-required="true" class="form-control" placeholder="Correo electrónico"></ion-input>
+            </div>
+            <br>
+            <div class="input-group">
+              <span class="input-group-text" id="basic-addon1">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+              </span>
+              <ion-input type="password" [(ngModel)]="password" name="password" aria-required="true"class="form-control" placeholder="Contraseña"></ion-input>
+            </div>
+          </div>
+          <div class="div-button">
+            <button class="login-button" shape="round" type="submit" expand="full">Iniciar sesión</button>
+          </div>
+          <div class="login-register">
+            <p>¿No tienes una cuenta? <a routerLink="/registro" class="login-register-link">Regístrate</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </ion-content>

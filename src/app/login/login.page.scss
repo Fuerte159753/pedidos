@@ -1,0 +1,71 @@
+.login-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  /*background-image: linear-gradient(to bottom, 
+  #005500 0%,
+  #008000 20%,
+  #00b300 40%,
+  #00ff00 60%,
+  #99ccff 80%,
+  #3366ff 100%); Azul */
+  /*background-image: url('./../../assets/img/fondo.avif');
+  background-repeat: no-repeat; 
+  background-size: cover;  Ajusta la imagen para cubrir todo el contenedor */
+}
+.div-button{
+  padding-left: 25%;
+}
+.login-button {
+  color: white;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-image: linear-gradient(to right, #03d203,#2f972f, #03d203);
+}
+
+.login-register {
+  margin-top: 20px;
+}
+
+.login-register-link {
+  color: #2612dc;
+  text-decoration: none;
+}
+
+.login-title {
+  padding-top: 5%;
+  text-align: center;
+  padding: 20px;
+}
+
+.login-title h1 {
+  font-size: 2em;
+}
+.input-group-text{
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+}
+.form-control{
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+}
+.login-form-container h2{
+  padding-left: 22%;
+  padding-bottom: 10%;
+}
+.login-image-container{
+  padding-left: 32%;
+  padding-top: 10%;
+  padding-bottom: 15%;
+}
+.login-image-container img{
+  width: 50%;
+  border-radius: 50%;
+}

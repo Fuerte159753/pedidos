@@ -1,0 +1,116 @@
+<ion-content [fullscreen]="true">
+  <h3>Editar Perfil</h3>
+  <br>
+  <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>Edita tu perfil</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <div class="contenedor">
+
+        <form [formGroup]="editForm" (ngSubmit)="update()">
+          <ion-item class="custom-item">
+            <ion-label position="floating">Nombre(s):</ion-label>
+            <ion-input formControlName="nombre" type="text"></ion-input>
+          </ion-item>
+          <ion-item class="custom-item">
+            <ion-label position="floating">Apellido(s):</ion-label>
+            <ion-input formControlName="apellido" type="text"></ion-input>
+          </ion-item>
+          <ion-item class="custom-item">
+            <ion-label position="floating">Teléfono:</ion-label>
+            <ion-input formControlName="telefono" type="number"></ion-input>
+          </ion-item>
+          <ion-item class="custom-item">
+            <ion-label position="floating">Localidad:</ion-label>
+            <ion-select formControlName="ruta" interface="popover">
+              <ion-select-option *ngFor="let ruta of rutas" [value]="ruta">{{ ruta }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <br>
+          <ion-button expand="full" shape="round" color="success" class="custom-button" type="submit">Actualizar</ion-button>
+        </form>
+        </div>
+      </div>
+    </ion-accordion>
+    <!-- agregar nueva direccion -->
+    <ion-accordion value="second">
+        <ion-item slot="header" color="light">
+          <ion-label>Agrega Otra Dirección</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <div class="contenedor">
+            <h5 style="font-family: Segoe UI;">Nueva Dirección</h5>
+            <form (ngSubmit)="new()">
+              <ion-item class="custom-item">
+                <ion-label position="floating">Dirección</ion-label>
+                <ion-input [(ngModel)]="nd" name="nuevaDireccion" aria-label="Success input" color="success" type="text" class="custom-input" required></ion-input>
+              </ion-item>
+              <br>
+              <ion-button type="submit" expand="full"  shape="round" color="success" class="custom-button">Guardar</ion-button>
+            </form>
+            <ng-container *ngFor="let direccion of direcciones.reverse()">
+              <ion-label>
+                <p style="padding: 5px 5px; border: solid 1px rgb(130, 129, 129); background-color: rgb(207, 160, 250); color: black; border-radius: 10px;">{{ direccion.direccion }}</p>
+              </ion-label>
+            </ng-container>
+          </div>
+        </div>
+    </ion-accordion>
+    <!-- eliminar direccion -->
+    <ion-accordion value="elimina">
+      <ion-item slot="header" color="light">
+        <ion-label>Elimina Una Dirección</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ng-container *ngFor="let direccion of direcciones.reverse()">
+          <ion-label>
+            <p>{{ direccion.direccion }}</p>
+          </ion-label>
+          <ion-button [disabled]="disableDeleteButton" (click)="dele(direccion.id_dire)">Eliminar</ion-button>
+        </ng-container>
+        <div *ngIf="direcciones.length === 0">
+          <h4 style="font-family: Segoe UI;">No hay direcciones disponibles para este cliente.</h4>
+        </div>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+  <div class="navigation">
+    <ul>
+      <li class="list">
+        <a (click)="home()">
+          <span class="icon">
+            <ion-icon name="home-outline"></ion-icon>
+          </span>
+          <span class="text">Inicio</span>
+        </a>
+      </li>
+      <li class="list" [class.active]="isTabActive('edit-p')">
+        <a (click)="us()">
+          <span class="icon">
+            <ion-icon name="person-outline"></ion-icon>
+          </span>
+          <span class="text">Perfil</span>
+        </a>
+      </li>
+      <li class="list">
+        <a (click)="ped()">
+          <span class="icon">
+            <ion-icon name="storefront-outline"></ion-icon>
+          </span>
+          <span class="text">Pedidos</span>
+        </a>
+      </li>
+      <li class="list">
+        <a (click)="logout()">
+          <span class="icon">
+            <ion-icon name="exit-outline"></ion-icon>
+          </span>
+          <span class="text">Exit</span>
+        </a>
+      </li>
+    </ul>
+  </div>  
+
+</ion-content>

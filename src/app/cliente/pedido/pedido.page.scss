@@ -1,0 +1,76 @@
+.navigation{
+    position: relative;
+    width: 400px;
+    height: 70px;
+    background: #EAEDED;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; 
+    bottom: 0
+  }
+  .navigation ul{
+    display: flex;
+    width: 350px;
+  }
+  .navigation ul li{
+    list-style: none;
+    position: relative;
+    /* 350 / 4 = 70*/
+    width: 87.5px;
+    height: 60px;
+    z-index: 2;
+  }
+  .navigation ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+  .navigation ul li a .icon{
+    position: relative;
+    display: block;
+    line-height: 65px;
+    font-size: 1.5rem;
+    transition: 0.5s;
+    color: #222327;
+  }
+  .navigation ul li.active a .icon{
+    transform: translateY(-32px);
+    color: #12CD26;
+  }
+  .navigation ul li a .text {
+  position: absolute;
+  background: linear-gradient(to right, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5, #1a73e8, #6f96ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 2px 7px;
+  border-radius: 12px;
+  font-weight: 400;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(15px);
+  text-shadow: 0 0 8px rgba(0,0,0,0.3); /* Agrega sombra al texto para crear el fondo gris */
+  }
+  .navigation ul li.active a .text{
+    transform: translateY(-4px);
+    opacity:1;
+  }
+  .navigation ul li:nth-child(1).active ~ .indicator{	
+    transform: translateX(calc(87.5px*0));
+  }
+  .navigation ul li:nth-child(2).active ~ .indicator{	
+    transform: translateX(calc(87.5px*1));
+  }
+  .navigation ul li:nth-child(3).active ~ .indicator{	
+    transform: translateX(calc(87.5px*2));
+  }
+  .navigation ul li:nth-child(4).active ~ .indicator{	
+    transform: translateX(calc(87.5px*3));
+  }

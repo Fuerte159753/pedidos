@@ -1,0 +1,80 @@
+<ion-header [translucent]="true" class="custom-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="navigateBackToClientePage()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Revisa Tus Pedidos {{id}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-accordion-group *ngIf="pedidos.length > 0; else noPedidos">
+    <ion-accordion *ngFor="let pedido of pedidos.reverse()">
+      <ion-item slot="header" [color]="getColorByEstado(pedido.estado_pedido)">
+        <ion-label>
+          <h2 class="pedido-info">
+            <ion-icon name="calendar"></ion-icon> {{ pedido.fecha_pedido }} 
+            <ion-icon name="checkmark-circle"></ion-icon> {{ pedido.estado_pedido }}
+          </h2>
+        </ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-label>
+          <!--<p>Categoría: {{ pedido.detalles[0]?.categoria }}</p>
+          <p>Subcategoría: {{ pedido.detalles[0]?.subcategoria }}</p>-->
+          <p>Descripción: {{ pedido.descripcion }}</p>
+        </ion-label>
+          <!-- ... (resto del código) ... -->
+          <ion-button *ngIf="pedido.estado_pedido === 'pendiente'||pedido.estado_pedido ==='en espera'"
+                      (click)="eliminarPedido(pedido.pedido_id)"
+                      expand="block">
+            Cancelar pedido
+          </ion-button>
+      </div>
+    </ion-accordion>
+    
+  </ion-accordion-group>
+  <ng-template #noPedidos>
+    <h3>¡Ups! Parece que todavía no realizas un pedido</h3>
+    <h3>Realiza tu primer pedido con nosotros</h3>
+  </ng-template>
+
+  <div class="navigation">
+    <ul>
+      <li class="list">
+        <a (click)="home()">
+          <span class="icon">
+            <ion-icon name="home-outline"></ion-icon>
+          </span>
+          <span class="text">Inicio</span>
+        </a>
+      </li>
+      <li class="list">
+        <a (click)="us()">
+          <span class="icon">
+            <ion-icon name="person-outline"></ion-icon>
+          </span>
+          <span class="text">Perfil</span>
+        </a>
+      </li>
+      <li class="list" [class.active]="isTabActive('his-pedi')">
+        <a (click)="ped()">
+          <span class="icon">
+            <ion-icon name="storefront-outline"></ion-icon>
+          </span>
+          <span class="text">Pedidos</span>
+        </a>
+      </li>
+      <li class="list">
+        <a (click)="logout()">
+          <span class="icon">
+            <ion-icon name="exit-outline"></ion-icon>
+          </span>
+          <span class="text">Exit</span>
+        </a>
+      </li>
+    </ul>
+  </div>  
+</ion-content>

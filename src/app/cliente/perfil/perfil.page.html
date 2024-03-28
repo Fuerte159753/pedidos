@@ -1,0 +1,61 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<ion-content [fullscreen]="true" class="custom-content ion-content-con-background" style="--ion-background-color: #ecf0f1;">
+  <h3>Perfil</h3>
+  <br>
+  <br>
+  <ion-card class="custom-card">
+    <div class="center-image" (click)="takePhoto()">
+      <ion-img src="assets/img/avatar.png" class="header-image"></ion-img>
+    </div>
+    <ion-item-group class="custom-item-group">
+        <div class="custom-info-container">
+          <p class="custom-info"><strong>Nombre(s): </strong> <span>{{ cl.nombre }}</span></p>
+          <p class="custom-info"><strong>Apellido(s): </strong> <span>{{ cl.apellido }}</span></p>
+          <p class="custom-info"><strong>Teléfono: </strong> <span>{{ cl.telefono }}</span></p>
+          <p class="custom-info"><strong>Localidad: </strong> <span>{{ cl.localidad }}</span></p>
+          <p class="custom-info"><strong>Correo: </strong> <span>{{ cl.correo }}</span></p>
+      </div>
+    <ion-tab-button>
+      <ion-buttons>
+          <ion-button expand="block" type="button" (click)="edit()">Editar perfil</ion-button>
+      </ion-buttons>
+    </ion-tab-button>
+    </ion-item-group>
+  </ion-card>
+  <div class="navigation">
+    <ul>
+      <li class="list">
+        <a (click)="home()">
+          <span class="icon">
+            <ion-icon name="home-outline"></ion-icon>
+          </span>
+          <span class="text">Inicio</span>
+        </a>
+      </li>
+      <li class="list" [class.active]="isTabActive('perfil')">
+        <a (click)="us()">
+          <span class="icon">
+            <ion-icon name="person-outline"></ion-icon>
+          </span>
+          <span class="text">Perfil</span>
+        </a>
+      </li>
+      <li class="list">
+        <a (click)="ped()">
+          <span class="icon">
+            <ion-icon name="storefront-outline"></ion-icon>
+          </span>
+          <span class="text">Pedidos</span>
+        </a>
+      </li>
+      <li class="list">
+        <a (click)="logout()">
+          <span class="icon">
+            <ion-icon name="exit-outline"></ion-icon>
+          </span>
+          <span class="text">Exit</span>
+        </a>
+      </li>
+    </ul>
+  </div>  
+</ion-content>
